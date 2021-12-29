@@ -2,3 +2,4 @@ requests
 sqlalchemy_utils
 psycopg2
 stravalib
+pydantic
