@@ -43,7 +43,7 @@ def refresh_access_token(refresh_token=sensitive_info_api(sensitive_info_file)[0
             file.seek(0)
             json.dump(data, file)
             file.truncate()
-            logger.info(f"New access and refresh tokens is are generated")
+            logger.info(f"New access and refresh tokens are generated")
     except Exception as e:
         logger.info("Exception occurred", exc_info=True)
 
