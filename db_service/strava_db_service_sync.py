@@ -1,5 +1,6 @@
 import sys
 import sqlalchemy
+
 sys.path.insert(1, '/Users/maximkalinchenko/Desktop/Garmin_Strava_project/strava')
 from sqlalchemy_utils import database_exists, create_database
 import pathlib
@@ -16,7 +17,8 @@ from alembic.operations import Operations
 sensitive_info_file = pathlib.Path.cwd().parent / 'sensitive_info.json'
 username, password, db_name = sensitive_info_db(sensitive_info_file)
 db_string = f'postgresql://{username}:{password}@127.0.0.1:5432/{db_name}'
-engine = create_engine(db_string, echo=True)
+#here future=True indicates that we are going to use sqlalchemy2.0 type of quering
+engine = create_engine(db_string, echo=True, future=True)
 Session = sessionmaker(engine)
 session = Session()
 
@@ -49,7 +51,8 @@ class Activity(base):
     average_cadence = Column(Float)
     start_date = Column(DateTime)
 
-#creating a table from the above class
+
+# creating a table from the above class
 
 def create_activity_table(base=base, db=engine):
     try:
@@ -58,9 +61,11 @@ def create_activity_table(base=base, db=engine):
     except Exception:
         logger.info(f"{Exception}")
 
-#making changes to a column type as necessary
+
+# making changes to a column type as necessary
 ctx = MigrationContext.configure(engine.connect())
 op = Operations(ctx)
 
-def alter_column_type(table_name:str,column_name: str, new_column_type: sqlalchemy.sql.visitors.TraversibleType):
-    op.alter_column(table_name=table_name,column_name=column_name,nullable=False,type_=new_column_type)
+
+def alter_column_type(table_name: str, column_name: str, new_column_type: sqlalchemy.sql.visitors.TraversibleType):
+    op.alter_column(table_name=table_name, column_name=column_name, nullable=False, type_=new_column_type)

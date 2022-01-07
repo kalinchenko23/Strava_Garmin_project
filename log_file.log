@@ -43,3 +43,27 @@ INFO:04-01-2022 08:40:05:strava_service.py:check_for_token_refresh:20:Token is s
 INFO:04-01-2022 08:52:54:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
 INFO:04-01-2022 09:04:54:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
 INFO:04-01-2022 09:08:29:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:07:39:strava_service.py:check_for_token_refresh:20:Token needs to be refreshed!:strava_service
+INFO:06-01-2022 06:07:40:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:06-01-2022 06:07:54:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:22:22:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:24:13:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:25:36:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:26:42:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:26:56:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:28:04:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:28:36:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:28:57:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:29:18:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:30:56:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:31:29:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:31:48:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:34:34:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:35:08:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:36:20:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:36:40:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:40:12:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 06:41:23:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 08:41:36:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 08:42:01:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:06-01-2022 08:53:34:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
