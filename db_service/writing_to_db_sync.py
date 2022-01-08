@@ -7,20 +7,19 @@ from pydantic_service import ActivityPydantic
 from strava_db_service_sync import Activity
 from strava.strava_service import logger
 
+#new 2.0 style of quering using select
+from sqlalchemy import select
 
 # adding initial data to db
 
 def add_to_db(session=session):
-    with session as sess:
-        sess.begin()
+    with session.begin() as sess:
         records_to_add = getting_activity()
         for record in records_to_add:
-            if session.query(Activity).filter(Activity.id == record['id']).count() != 1:
+            result=sess.execute(select(Activity.id).where(Activity.id == record['id']))
+            if result.first() is None:
                 sess.add(Activity(**ActivityPydantic(**record).dict()))
                 logger.info(f"New record {record['name']} with id{record['id']} was added to the db")
-            else:
-                pass
 
 
-
-add_to_db()
+#add_to_db()

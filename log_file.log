@@ -67,3 +67,29 @@ INFO:06-01-2022 06:41:23:strava_service.py:check_for_token_refresh:20:Token is s
 INFO:06-01-2022 08:41:36:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
 INFO:06-01-2022 08:42:01:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
 INFO:06-01-2022 08:53:34:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 11:53:33:strava_service.py:check_for_token_refresh:20:Token needs to be refreshed!:strava_service
+INFO:07-01-2022 11:53:33:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:07-01-2022 11:53:42:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:29:20:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:30:03:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:31:07:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:31:15:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:31:27:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:31:33:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:31:58:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:37:39:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:38:08:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:40:05:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:40:14:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:45:21:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:46:15:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:46:37:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:46:54:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:47:17:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:47:27:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:48:11:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:48:14:writing_to_db_sync.py:add_to_db:20:New record Morning Activity with id6486534164 was added to the db:writing_to_db_sync
+INFO:07-01-2022 04:48:14:writing_to_db_sync.py:add_to_db:20:New record Night Activity with id6484599078 was added to the db:writing_to_db_sync
+INFO:07-01-2022 04:54:08:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:07-01-2022 04:54:10:writing_to_db_sync.py:add_to_db:20:New record Morning Activity with id6486534164 was added to the db:writing_to_db_sync
+INFO:07-01-2022 04:54:10:writing_to_db_sync.py:add_to_db:20:New record Night Activity with id6484599078 was added to the db:writing_to_db_sync

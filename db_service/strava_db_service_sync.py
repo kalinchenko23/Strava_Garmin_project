@@ -18,7 +18,7 @@ sensitive_info_file = pathlib.Path.cwd().parent / 'sensitive_info.json'
 username, password, db_name = sensitive_info_db(sensitive_info_file)
 db_string = f'postgresql://{username}:{password}@127.0.0.1:5432/{db_name}'
 #here future=True indicates that we are going to use sqlalchemy2.0 type of quering
-engine = create_engine(db_string, echo=True, future=True)
+engine = create_engine(db_string, echo=False, future=True)
 Session = sessionmaker(engine)
 session = Session()
 
