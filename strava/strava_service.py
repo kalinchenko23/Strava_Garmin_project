@@ -2,28 +2,25 @@ import logging
 import logging.config
 import json
 import pathlib
-from pathlib import Path
 
-from strava_sensitive_info_service import sensitive_info_api
+from strava.strava_sensitive_info_service import sensitive_info_api
 from stravalib.client import Client
 import time
-
-sensitive_info_file: Path = pathlib.Path.cwd().parent / 'sensitive_info.json'
-
-logging.config.fileConfig("/Users/maximkalinchenko/Desktop/Garmin_Strava_project/logging_file_config.conf")
-logger=logging.getLogger("stravalogger")
+sensitive_info_file = pathlib.Path('/Users/maximkalinchenko/Desktop/Garmin_Strava_project/sensitive_info.json')
+logging.config.fileConfig('/Users/maximkalinchenko/Desktop/Garmin_Strava_project/logging_file_config.conf')
+strava_logger=logging.getLogger("stravalogger")
 
 # client info
 client = Client()
-client.access_token = sensitive_info_api(sensitive_info_file)[3]
 client.refresh_token = sensitive_info_api(sensitive_info_file)[0]
+client.access_token = sensitive_info_api(sensitive_info_file)[3]
 client.expires_at = sensitive_info_api(sensitive_info_file)[4]
 
 
 # getting an original access token
 def original_token_retrival(code: str, client_id=sensitive_info_api(sensitive_info_file)[1],
                             client_secret=sensitive_info_api(sensitive_info_file)[2]):
-    logger.info(client.exchange_code_for_token(client_id, client_secret, code))
+    strava_logger.info(client.exchange_code_for_token(client_id, client_secret, code))
 
 
 # refreshing access token
@@ -43,16 +40,15 @@ def refresh_access_token(refresh_token=sensitive_info_api(sensitive_info_file)[0
             file.seek(0)
             json.dump(data, file)
             file.truncate()
-            logger.info(f"New access and refresh tokens are generated")
+            strava_logger.info(f"New access and refresh tokens are generated")
     except Exception as e:
-        logger.info("Exception occurred", exc_info=True)
+        strava_logger.info("Exception occurred", exc_info=True)
 
 
 # check for refresh
 def check_for_token_refresh(expiration: time.time() = sensitive_info_api(sensitive_info_file)[4]):
     if expiration < time.time():
-        logger.info('Token needs to be refreshed!')
+        strava_logger.info('Token needs to be refreshed!')
         refresh_access_token()
     else:
-        logger.info('Token is still valid!')
-
+        strava_logger.info('Token is still valid!')

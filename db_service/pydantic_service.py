@@ -1,4 +1,6 @@
 from datetime import datetime
+
+import pytz
 from pydantic import BaseModel, validator
 
 
@@ -15,11 +17,13 @@ class ActivityPydantic(BaseModel):
     average_heartrate: float = None
     max_heartrate: float = None
     average_cadence: float = None  # steps per minute
-    start_date: datetime = None
+    start_date: datetime
 
+    # this validator makes datetime oject timezone unaware, we have to do this in order to fix
+    # an error form writing_to_db.py
     @validator('start_date', check_fields=False)
     def date_format(cls, date):
-        return date.strftime("%m/%d/%y %H:%M")
+        return date.replace(tzinfo=None)
 
     @validator('distance', check_fields=False)
     def distance_convertion(cls, dist):

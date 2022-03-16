@@ -1,6 +1,9 @@
 requests
 sqlalchemy_utils
+asyncpg
 psycopg2
 stravalib
 pydantic
 alembic
+asyncio
+mongoengine
