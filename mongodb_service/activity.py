@@ -18,23 +18,21 @@ class Specks(mongoengine.EmbeddedDocument):
     average_cadence = mongoengine.FloatField()
     meta={'strict':False}
 class Activity(mongoengine.Document):
-    id=mongoengine.IntField()
+    strava_id=mongoengine.IntField()
     type=mongoengine.StringField()
     name=mongoengine.StringField()
     start_date=mongoengine.DateTimeField()
     specks=mongoengine.EmbeddedDocumentField(Specks)
-    meta={'indexes':["#id"],
+    meta = {'strict': False,
+          'indexes':["#id"],
           'ordering': ['-start_date'],
-          'strict': False}
+          }
 
 def add_activity_mongo():
     a=Activity()
-    fields = [f for f in ActivityPydantic.__fields__.keys() if f in Activity._fields_ordered[1:]]
     for activity in getting_activity():
-        record=Activity()
-    # Activity.save(validate=False)
-    # r=Activity.from_json(**result)
-
-    #print(r)
-#activity.save()
-print(add_activity_mongo())
+        specs=Specks().from_json(ActivityPydantic(**activity).json().replace('id','strava_id'))
+        new_record=Activity().from_json(ActivityPydantic(**activity).json().replace('id','strava_id'))
+        new_record.specks=specs
+        # new_record.save()
+add_activity_mongo()
