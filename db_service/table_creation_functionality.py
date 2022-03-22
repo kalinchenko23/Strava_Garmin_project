@@ -1,11 +1,13 @@
 # creating a table from the above class
+import mongoengine
+
 from db_service.sync_service.strava_db_service_sync import engine_sync
 from strava.strava_service import strava_logger
-
 
 # In this section we are creating tables for our database
 from sqlalchemy import Column, Float, DateTime, BigInteger, String
 from sqlalchemy.orm import declarative_base
+
 Base = declarative_base()
 
 
@@ -36,3 +38,33 @@ async def create_activity_table(base=Base, db=engine_sync):
             strava_logger.info(f"Table {Activity.__tablename__} was created successfully")
     except Exception:
         strava_logger.info(f"{Exception}")
+
+
+# ///////////////////////////////////////////////////////
+
+# MongoDB portion is below
+
+class Specks(mongoengine.EmbeddedDocument):
+    distance = mongoengine.FloatField()
+    average_speed = mongoengine.FloatField()
+    max_speed = mongoengine.FloatField()
+    moving_time = mongoengine.FloatField()
+    elapsed_time = mongoengine.FloatField()
+    total_elevation_gain = mongoengine.FloatField()
+    average_heartrate = mongoengine.FloatField()
+    max_heartrate = mongoengine.FloatField()
+    average_cadence = mongoengine.FloatField()
+    meta = {'strict': False}
+
+
+class Mongo_Activity(mongoengine.Document):
+    strava_id = mongoengine.IntField()
+    type = mongoengine.StringField()
+    name = mongoengine.StringField()
+    start_date = mongoengine.DateTimeField()
+    specks = mongoengine.EmbeddedDocumentField(Specks)
+    meta = {'collection':"activity",
+            'strict': False,
+            'indexes': ["#id"],
+            'ordering': ['-start_date'],
+            }
