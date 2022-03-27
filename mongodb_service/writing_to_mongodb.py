@@ -17,7 +17,7 @@ def add_activity_mongo():
         new_record = Mongo_Activity().from_json(
             ActivityPydantic(**activity).json().replace('id', 'strava_id'))
         new_record.specks = specs
-        new_record.save()
+        #new_record.save()
 
 
 add_activity_mongo()

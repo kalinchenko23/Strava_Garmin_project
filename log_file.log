@@ -3036,3 +3036,17 @@ INFO:20-03-2022 07:56:16:strava_service.py:check_for_token_refresh:20:Token is s
 INFO:20-03-2022 07:57:14:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
 INFO:20-03-2022 07:57:40:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
 INFO:20-03-2022 07:57:53:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:26-03-2022 09:04:34:strava_service.py:check_for_token_refresh:20:Token needs to be refreshed!:strava_service
+INFO:26-03-2022 09:04:34:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:26-03-2022 09:09:50:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:27-03-2022 05:01:17:strava_service.py:check_for_token_refresh:20:Token needs to be refreshed!:strava_service
+INFO:27-03-2022 05:01:17:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:27-03-2022 05:01:29:strava_service.py:check_for_token_refresh:20:Token is still valid!:strava_service
+INFO:27-03-2022 05:04:01:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:27-03-2022 05:07:59:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:27-03-2022 05:10:02:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:27-03-2022 05:16:58:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:27-03-2022 05:18:30:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:27-03-2022 05:23:44:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:27-03-2022 05:25:37:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
+INFO:27-03-2022 05:25:46:strava_service.py:refresh_access_token:20:New access and refresh tokens are generated:strava_service
